@@ -92,6 +92,15 @@
     width: 100%;
 }
 
+.spinner{
+    position: "absolute";
+    top: "50%";
+    left: "50%";
+    margin-top: -12;
+    margin-left: -12;
+    color: white;
+}
+
 @media screen and (min-width: 720px) {
     .container {
         display: grid;
