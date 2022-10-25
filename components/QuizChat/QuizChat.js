@@ -5,7 +5,10 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
 let socket;
 
-fetch("/api/socket");
+const feTch = async ()=>{
+  await fetch('api/socket')
+}
+feTch();
 
 socket = io();
 const QuizChat = () => {
