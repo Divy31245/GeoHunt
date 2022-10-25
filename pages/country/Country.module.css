@@ -2,7 +2,7 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: var(--box-shadow);
-    background-color: var(--background-color-light);
+    background-color:rgba(96, 102, 208, 0.7);
 }
 
 .overview_panel img {
@@ -33,11 +33,11 @@
 
 .overview_label {
     font-size: 14px;
-    color: var(--text-color-secondary);
+    color: #b3c5cd;
 }
 
 .details_panel {
-    background-color: var(--background-color-light);
+    background-color: rgba(96, 102, 208, 0.7);
     box-shadow: var(--box-shadow);
     border-radius: 8px;
 }
@@ -56,7 +56,7 @@
 }
 
 .details_panel_label {
-    color: var(--text-color-secondary);
+    color: #b3c5cd;
 }
 
 .details_panel_borders_container {
@@ -79,7 +79,7 @@
 }
 
 .details_panel_borders_label {
-    color: var(--text-color-secondary);
+    color:#b3c5cd;
     margin-bottom: 20px;
 }
 

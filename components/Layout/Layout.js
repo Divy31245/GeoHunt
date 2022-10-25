@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Layout.module.css";
 
 const Layout = ({ children, title = "Geography Hunt" }) => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const setThemeState = (theme) => {
     setTheme(theme);
     localStorage.setItem("theme", theme);
@@ -38,9 +38,9 @@ const Layout = ({ children, title = "Geography Hunt" }) => {
             <div className={styles.headerTitle}>Geography Hunt</div>
           </div>
         </Link>
-        <button className={styles.theme_switcher} onClick={switchTheme}>
+        {/* <button className={styles.theme_switcher} onClick={switchTheme}>
           <Brightness6Rounded />
-        </button>
+        </button> */}
       </header>
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>Divy31245 @ github.com</footer>

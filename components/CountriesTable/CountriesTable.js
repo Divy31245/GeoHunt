@@ -6,7 +6,11 @@ import {
 } from "@mui/icons-material";
 import styles from "./CountriesTable.module.css";
 
+import Image from "next/image";
+
+
 const orderBy = (countries, value, direction) => {
+  
   if (direction === "asc") {
     return [...countries].sort((a, b) => (a[value] > b[value] ? 1 : -1));
   }
@@ -37,9 +41,18 @@ const SortArrow = ({ direction }) => {
 };
 
 const CountriesTable = ({ countries }) => {
-  const [direction, setDirection] = useState();
+  // const [postsPerPage, setPostsPerPage] = useState(5);
+  // const [currentPage, setcurrPage] = useState(1);
+  // const endingIndex = currentPage * postsPerPage;
+  // const startIndex = endingIndex - postsPerPage;
   const [value, setValue] = useState();
+  const [pgNum,setPgnum] = useState(5);
+  const handleClick = () =>{
+    setPgnum(pgNum => pgNum + 10);
+  }
+  const [direction, setDirection] = useState("");
   const orderedCountries = orderBy(countries, value, direction);
+
   const switchDirection = () => {
     if (!direction) {
       setDirection("desc");
@@ -89,11 +102,11 @@ const CountriesTable = ({ countries }) => {
           {value === "gini" && <SortArrow direction={direction} />}
         </button>
       </div>
-      {orderedCountries.map((country) => (
+      {orderedCountries.slice(0,pgNum).map((country) => (
         <Link href={`/country/${country.alpha3Code}`} key={country.name}>
           <div className={styles.row}>
             <div className={styles.flag}>
-              <img src={country.flag} alt={country.name} title={country.name} />
+              <Image src={country.flag} alt={country.name} title={country.name} height={40} width={60} />
             </div>
             <div className={styles.name}>{country.name}</div>
             <div className={styles.population}>{country.population}</div>
@@ -102,6 +115,13 @@ const CountriesTable = ({ countries }) => {
           </div>
         </Link>
       ))}
+      <div className={styles.btn}>
+        <button onClick={handleClick} className={styles.btnOne}>
+          <span>Load More</span>
+        </button>
+      </div>
+      
+
     </div>
   );
 };

@@ -1,4 +1,16 @@
+.quizBtn{
+  color: white;
+  padding: 2%;
+  border-radius: 8px;
+  background: rgb(55, 182, 197);
+  align-items: flex-end;
+  font-size: 1.3rem;
+}
 
+.quizBtn:hover{
+  background-color: rgba(96, 102, 208, 0.7);
+  
+}
 
 .counts {
   margin: 12px 0;
@@ -6,7 +18,10 @@
 }
 
 .inputContainer {
-  margin-bottom: 40px;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  margin-bottom: 2%;
 }
 
 @media screen and (min-width: 720px) {
