@@ -3,12 +3,13 @@ import io from "socket.io-client";
 import { useState, useEffect } from "react";
 import TelegramIcon from '@mui/icons-material/Telegram';
 import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
+import { JoinLeftSharp } from "@mui/icons-material";
 let socket;
 
 const feTch = async ()=>{
   await fetch('api/socket')
 }
-feTch();
+()=>feTch();
 
 socket = io();
 const QuizChat = () => {
